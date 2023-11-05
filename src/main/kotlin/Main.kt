@@ -1,6 +1,6 @@
 fun main() {
     val totalCommission = calculateCommission("Visa", 76000, 100000)
-    println("Итого: " + totalCommission)
+    println("Комиссия: " + totalCommission)
 }
 
 fun calculateCommission(type: String, previousTransfers: Int, transferNow: Int): Int {
