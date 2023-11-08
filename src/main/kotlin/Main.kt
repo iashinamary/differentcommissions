@@ -16,7 +16,7 @@ fun checkCommissionForType(type: String, previousTransfers: Int, transferNow: In
 
 fun checkForLimitAndCalculate(previousTransfers: Int, transferNow: Int): Int {
    var commissionForMasterOrMaestro = 0
-    if (previousTransfers <= 75_000){
+    if (previousTransfers <= 75_000 && previousTransfers+transferNow<75_000){
         commissionForMasterOrMaestro
     } else if (previousTransfers+transferNow>75_000 && previousTransfers <75000) {
         commissionForMasterOrMaestro = ((((previousTransfers+transferNow)-75_000)* 0.006) + 20).toInt()
