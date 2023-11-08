@@ -22,7 +22,7 @@ fun checkForLimitAndCalculate(previousTransfers: Int, transferNow: Int): Int {
         commissionForMasterOrMaestro = ((((previousTransfers+transferNow)-75_000)/100 * 0.006) + 20).toInt()
 
     } else {
-        commissionForMasterOrMaestro = ((transferNow / 100 * 0.006) + 20).toInt()
+        commissionForMasterOrMaestro = ((transferNow * 0.006) + 20).toInt()
     }
     return commissionForMasterOrMaestro
 }
