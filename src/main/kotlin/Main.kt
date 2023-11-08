@@ -18,10 +18,10 @@ fun checkForLimitAndCalculate(previousTransfers: Int, transferNow: Int): Int {
    var commissionForMasterOrMaestro = 0
     if (previousTransfers <= 75_000){
         commissionForMasterOrMaestro
-    } else if (previousTransfers+transferNow>75_000) {
-        commissionForMasterOrMaestro = ((((previousTransfers+transferNow)-75_000)/100 * 0.006) + 20).toInt()
+    } else if (previousTransfers+transferNow>75_000 && previousTransfers <75000) {
+        commissionForMasterOrMaestro = ((((previousTransfers+transferNow)-75_000)* 0.006) + 20).toInt()
 
-    } else {
+    }  else {
         commissionForMasterOrMaestro = ((transferNow * 0.006) + 20).toInt()
     }
     return commissionForMasterOrMaestro
