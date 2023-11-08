@@ -28,7 +28,8 @@ fun checkForLimitAndCalculate(previousTransfers: Int, transferNow: Int): Int {
 }
 
 fun calculateCommissionForVisaOrMir(transferNow: Int): Int {
-    var commissionForVisaOrMir = (transferNow / 100 * 0.0075).toInt()
+    val percentOfCommission = 0.0075
+    var commissionForVisaOrMir = (transferNow * percentOfCommission).toInt()
     if (commissionForVisaOrMir < 35) {
         commissionForVisaOrMir = 35
     }
